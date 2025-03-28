@@ -157,21 +157,21 @@
             }
         }
 
-        /*  Effect */
+        /* Lightning Effect */
         @keyframes lightning-flash {
             0% {
-                background-color: black;
+                opacity: 0;
             }
-            50% {
-                background-color: red;
+            10% {
+                opacity: 1;
             }
             100% {
-                background-color: black;
+                opacity: 0;
             }
         }
 
         .lightning {
-            animation: lightning-flash 0.2s linear infinite;
+            animation: lightning-flash 1s linear 0s infinite;
             z-index: 1;
             position: fixed;
             top: 0;
@@ -182,7 +182,7 @@
     </style>
 </head>
 <body>
-    <!-- Flash -->
+    <!-- Lightning Flash -->
     <div class="lightning"></div>
     
     <div class="particles"></div>
@@ -200,16 +200,16 @@
                     ███    ███                                   
                 </pre>
         </div>
-        <h1>EXECUTOR</h1>
-        <p>Get BEST EXECUTOR that’s FAST, RELIABLE, and UNSTOPPABLE.</p>
-        <p>100 UNC, 100 sUNC</p>
+        <h1>PIRACY EXECUTOR</h1>
+        <p>Get the BEST EXECUTOR that's FAST, RELIABLE!</p>
+        <p>100 UNC, 100 sUNC.</p>
 
         <a href="about:blank" class="btn-download">DOWNLOAD NOW</a>
         <a href="https://discord.gg/DaQmuSzgKG" target="_blank" class="btn-discord"><i class="fab fa-discord"></i> Join Discord</a>
     </div>
 
     <script>
-        // particles effect
+        // Create particles effect
         const particlesContainer = document.querySelector('.particles');
         setInterval(() => {
             const particle = document.createElement('div');
