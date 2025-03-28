@@ -12,16 +12,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
     <link rel="icon" href="https://media.discordapp.net/attachments/1246719291517308929/1355064651209244773/New_Project.png?ex=67e791cc&is=67e6404c&hm=bbaa7f89cb8384e3208ca15ba5837d3cb24ac98ddaee4946f9997c938a0c0d7e&=&format=webp&quality=lossless" type="image/png">
-
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background-color: black;
             color: red;
@@ -35,26 +28,14 @@
             align-items: center;
             text-align: center;
             position: relative;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(15, 15, 15, 1) 100%);
+            animation: backgroundAnimation 15s ease-in-out infinite;
         }
-
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1;
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(15, 15, 15, 1) 100%); }
+            50% { background: linear-gradient(45deg, rgba(0, 0, 0, 1) 100%, rgba(15, 15, 15, 1) 0%); }
+            100% { background: linear-gradient(45deg, rgba(0, 0, 0, 1) 0%, rgba(15, 15, 15, 1) 100%); }
         }
-
-        .container {
-            z-index: 2;
-            max-width: 1200px;
-            margin: auto;
-            padding: 50px 20px;
-        }
-
         h1 {
             font-size: 6rem;
             margin: 20px 0;
@@ -62,18 +43,10 @@
             animation: fadeIn 2s ease-out;
             user-select: none;
         }
-
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         .ascii {
             white-space: pre;
             font-size: 16px;
@@ -83,7 +56,6 @@
             animation: fadeIn 2s ease-out forwards;
             user-select: none;
         }
-
         p {
             font-size: 20px;
             margin: 20px 0;
@@ -91,7 +63,6 @@
             letter-spacing: 1px;
             text-shadow: 0 0 5px red;
         }
-
         .btn-download, .btn-discord {
             display: inline-block;
             padding: 20px 60px;
@@ -107,14 +78,12 @@
             margin-right: 15px;
             letter-spacing: 2px;
         }
-
         .btn-download:hover, .btn-discord:hover {
             background-color: red;
             color: black;
             transform: scale(1.1);
             box-shadow: 0 0 20px red;
         }
-
         footer {
             margin-top: 50px;
             padding: 20px;
@@ -125,7 +94,6 @@
             text-align: center;
             user-select: none;
         }
-
         .particles {
             position: fixed;
             top: 0;
@@ -135,7 +103,6 @@
             pointer-events: none;
             z-index: -1;
         }
-
         .particles div {
             position: absolute;
             width: 8px;
@@ -145,31 +112,15 @@
             opacity: 0.9;
             animation: particle-move 5s infinite;
         }
-
         @keyframes particle-move {
-            0% {
-                transform: translate(0, 0);
-                opacity: 0.9;
-            }
-            100% {
-                transform: translate(calc(100vw * 2), calc(100vh * 2));
-                opacity: 0;
-            }
+            0% { transform: translate(0, 0); opacity: 0.9; }
+            100% { transform: translate(calc(100vw * 2), calc(100vh * 2)); opacity: 0; }
         }
-
-        /* Lightning Effect */
         @keyframes lightning-flash {
-            0% {
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            100% { opacity: 0; }
         }
-
         .lightning {
             animation: lightning-flash 1s linear 0s infinite;
             z-index: 1;
@@ -179,7 +130,6 @@
             width: 100%;
             height: 100%;
         }
-
         .terminal {
             position: absolute;
             top: 20px;
@@ -195,18 +145,10 @@
             overflow-y: auto;
             z-index: 5;
         }
-
         #terminal-output {
             white-space: pre-wrap;
             word-wrap: break-word;
         }
-
-        @keyframes glitch {
-            0% { text-shadow: -1px 0 red, 1px 0 blue; }
-            50% { text-shadow: 1px 0 red, -1px 0 blue; }
-            100% { text-shadow: -1px 0 red, 1px 0 blue; }
-        }
-
         .glitch {
             animation: glitch 1s infinite;
             color: red;
@@ -216,7 +158,6 @@
 </head>
 <body>
     <div class="lightning"></div>
-    
     <div class="particles"></div>
     <div class="container">
         <div class="ascii">
@@ -232,59 +173,34 @@
                     ███    ███                                   
                 </pre>
         </div>
-        <h1>EXECUTOR</h1>
+        <h1>PIRACY EXECUTOR</h1>
         <p>Get the BEST EXECUTOR that's FAST, RELIABLE!</p>
         <p>100 UNC, 100 sUNC.</p>
-
         <a href="about:blank" class="btn-download">DOWNLOAD NOW</a>
         <a href="https://discord.gg/DaQmuSzgKG" target="_blank" class="btn-discord"><i class="fab fa-discord"></i> Join Discord</a>
     </div>
-
-    <div class="terminal">
-        <pre id="terminal-output">Loading....</pre>
-    </div>
-
     <footer>
-        <p>&copy; PIRACY EXECUTOR COMING SOON.</p>
+        <p>&copy; 2025 PIRACY EXECUTOR. All Rights Reserved.</p>
     </footer>
 
     <script>
         const particlesContainer = document.querySelector('.particles');
         setInterval(() => {
             const particle = document.createElement('div');
-            particle.style.top = `${Math.random() * 50}%`;
-            particle.style.left = `${Math.random() * 50}%`;
+            particle.style.top = `${Math.random() * 400}%`;
+            particle.style.left = `${Math.random() * 400}%`;
             particlesContainer.appendChild(particle);
-
-            setTimeout(() => {
-                particle.remove();
-            }, 5000);
-        }, 50);
-
-        const terminalOutput = document.getElementById("terminal-output");
-        const messages = [
-            "PIRACY EXECUTOR IS NOT OUT YET!",
-            "PLEASE BE PATIENT.",
-        ];
-
-        let i = 0;
-        function simulateTerminal() {
-            if (i < messages.length) {
-                terminalOutput.textContent += "\n" + messages[i];
-                i++;
-                setTimeout(simulateTerminal, 2000);
-            }
-        }
-
-        simulateTerminal();
+            setTimeout(() => { particle.remove(); }, 5000);
+        }, 10);
 
         document.querySelector("h1").classList.add("glitch");
 
         document.addEventListener("keydown", (e) => {
             if (e.ctrlKey && e.shiftKey && e.key === "H") {
-                document.body.classList.add("flash-effect");
+                alert("Secret Easter egg activated!");
+                document.body.style.backgroundColor = "red";
                 setTimeout(() => {
-                    document.body.classList.remove("flash-effect");
+                    document.body.style.backgroundColor = "black";
                 }, 5000);
             }
         });
