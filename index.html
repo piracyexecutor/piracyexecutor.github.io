@@ -179,10 +179,42 @@
             width: 100%;
             height: 100%;
         }
+
+        .terminal {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 400px;
+            height: 300px;
+            background-color: black;
+            color: #0f0;
+            font-family: 'Share Tech Mono', monospace;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        #terminal-output {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: -1px 0 red, 1px 0 blue; }
+            50% { text-shadow: 1px 0 red, -1px 0 blue; }
+            100% { text-shadow: -1px 0 red, 1px 0 blue; }
+        }
+
+        .glitch {
+            animation: glitch 1s infinite;
+            color: red;
+            font-family: 'Share Tech Mono', monospace;
+        }
     </style>
 </head>
 <body>
-    <!-- Lightning Flash -->
     <div class="lightning"></div>
     
     <div class="particles"></div>
@@ -200,7 +232,7 @@
                     ███    ███                                   
                 </pre>
         </div>
-        <h1>PIRACY EXECUTOR</h1>
+        <h1>EXECUTOR</h1>
         <p>Get the BEST EXECUTOR that's FAST, RELIABLE!</p>
         <p>100 UNC, 100 sUNC.</p>
 
@@ -208,19 +240,54 @@
         <a href="https://discord.gg/DaQmuSzgKG" target="_blank" class="btn-discord"><i class="fab fa-discord"></i> Join Discord</a>
     </div>
 
+    <div class="terminal">
+        <pre id="terminal-output">Loading....</pre>
+    </div>
+
+    <footer>
+        <p>&copy; PIRACY EXECUTOR COMING SOON.</p>
+    </footer>
+
     <script>
-        // Create particles effect
         const particlesContainer = document.querySelector('.particles');
         setInterval(() => {
             const particle = document.createElement('div');
-            particle.style.top = `${Math.random() * 100}%`;
-            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 50}%`;
+            particle.style.left = `${Math.random() * 50}%`;
             particlesContainer.appendChild(particle);
 
             setTimeout(() => {
                 particle.remove();
             }, 5000);
         }, 50);
+
+        const terminalOutput = document.getElementById("terminal-output");
+        const messages = [
+            "PIRACY EXECUTOR IS NOT OUT YET!",
+            "PLEASE BE PATIENT.",
+        ];
+
+        let i = 0;
+        function simulateTerminal() {
+            if (i < messages.length) {
+                terminalOutput.textContent += "\n" + messages[i];
+                i++;
+                setTimeout(simulateTerminal, 2000);
+            }
+        }
+
+        simulateTerminal();
+
+        document.querySelector("h1").classList.add("glitch");
+
+        document.addEventListener("keydown", (e) => {
+            if (e.ctrlKey && e.shiftKey && e.key === "H") {
+                document.body.classList.add("flash-effect");
+                setTimeout(() => {
+                    document.body.classList.remove("flash-effect");
+                }, 5000);
+            }
+        });
     </script>
 </body>
 </html>
