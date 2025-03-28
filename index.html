@@ -79,19 +79,9 @@
             font-size: 16px;
             color: red;
             text-shadow: 0 0 15px red;
-            animation: terminal-scroll 5s linear infinite;
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
             user-select: none;
-            margin-bottom: 20px;
-            transform: translateY(-50px);
-        }
-
-        @keyframes terminal-scroll {
-            0% {
-                transform: translateY(100%);
-            }
-            100% {
-                transform: translateY(-100%);
-            }
         }
 
         p {
@@ -125,25 +115,15 @@
             box-shadow: 0 0 20px red;
         }
 
-        .btn-image {
-            display: block;
-            margin-top: 40px;
-            width: 300px;
-            height: 200px;
-            background-image: url('https://media.discordapp.net/attachments/1353948351078465537/1355236358649810983/image.png?ex=67e831b6&is=67e6e036&hm=5f06ce7359a9a70e8b9cd5e456895b7963456e1755e9c0c0af890d6042a97f69&=&format=webp&quality=lossless');
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-image:hover {
-            transform: rotateY(15deg) rotateX(15deg);
-            box-shadow: 0 0 25px red;
-        }
-
         footer {
-            display: none;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 14px;
+            color: #888;
+            border-top: 1px solid red;
+            box-shadow: 0 -1px 15px red;
+            text-align: center;
+            user-select: none;
         }
 
         .particles {
@@ -176,9 +156,35 @@
                 opacity: 0;
             }
         }
+
+        /*  Effect */
+        @keyframes lightning-flash {
+            0% {
+                background-color: black;
+            }
+            50% {
+                background-color: red;
+            }
+            100% {
+                background-color: black;
+            }
+        }
+
+        .lightning {
+            animation: lightning-flash 0.2s linear infinite;
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
+    <!-- Flash -->
+    <div class="lightning"></div>
+    
     <div class="particles"></div>
     <div class="container">
         <div class="ascii">
@@ -194,23 +200,21 @@
                     ███    ███                                   
                 </pre>
         </div>
-        <h1>PIRACY EXECUTOR</h1>
+        <h1>EXECUTOR</h1>
         <p>Get BEST EXECUTOR that’s FAST, RELIABLE, and UNSTOPPABLE.</p>
-        <p>100 UNC, 100 sUNC.</p>
+        <p>100 UNC, 100 sUNC</p>
 
         <a href="about:blank" class="btn-download">DOWNLOAD NOW</a>
         <a href="https://discord.gg/DaQmuSzgKG" target="_blank" class="btn-discord"><i class="fab fa-discord"></i> Join Discord</a>
-
-        <div class="btn-image"></div>
     </div>
 
     <script>
-        // Create particles effect
+        // particles effect
         const particlesContainer = document.querySelector('.particles');
         setInterval(() => {
             const particle = document.createElement('div');
-            particle.style.top = `${Math.random() * 50}%`;
-            particle.style.left = `${Math.random() * 50}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.left = `${Math.random() * 100}%`;
             particlesContainer.appendChild(particle);
 
             setTimeout(() => {
