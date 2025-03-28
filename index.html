@@ -258,47 +258,8 @@ PPPPPPPPPP          iiiiiiiiRRRRRRRR     RRRRRRRAAAAAAA                   AAAAAA
     </div>
 
     <footer>
-        <p>&copy; 2025 PIRACYExecutor | All Rights Reserved</p>
+        <p>&copy; :3 3:</p>
     </footer>
-
-    <iframe 
-        id="yt-video" 
-        src="https://www.youtube.com/embed/tmlZeYnfw7g?autoplay=1&loop=1&playlist=tmlZeYnfw7g&controls=0&showinfo=0&modestbranding=1" 
-        frameborder="0" 
-        allow="autoplay" 
-        style="display: none;" 
-    ></iframe>
-
-    <script>
-        var player;
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('yt-video', {
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            event.target.setVolume(10);
-        }
-
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.ENDED) {
-                player.playVideo();
-            }
-        }
-
-        function showTab(tab) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(t => t.classList.remove('active'));
-            document.getElementById(tab).classList.add('active');
-        }
-    </script>
-
-    <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 
 </html>
