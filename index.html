@@ -84,16 +84,23 @@
             transform: scale(1.1);
             box-shadow: 0 0 20px red;
         }
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 14px;
-            color: #888;
-            border-top: 1px solid red;
-            box-shadow: 0 -1px 15px red;
-            text-align: center;
-            user-select: none;
-        }
+footer {
+    position: fixed; /* Fix the footer in place */
+    right: 0; /* Align the footer to the right */
+    bottom: 0; /* Place the footer at the bottom of the screen */
+    margin-right: 0;
+    padding: 20px; /* Adjust padding as needed */
+    font-size: 16px;
+    color: #888;
+    border-top: 0.2px solid red;
+    border-bottom: 0.2px solid red;
+    border-right: 0.2px solid red;
+    border-left: 0.2px solid red;
+    box-shadow: 0 -5px 50px red;
+    text-align: right;
+    user-select: none;
+}
+
         .particles {
             position: fixed;
             top: 0;
@@ -180,7 +187,7 @@
         <a href="https://discord.gg/DaQmuSzgKG" target="_blank" class="btn-discord"><i class="fab fa-discord"></i> Join Discord</a>
     </div>
     <footer>
-        <p>&copy; 2025 PIRACY EXECUTOR. All Rights Reserved.</p>
+        <p>&copy;     2025 PIRACY EXECUTOR. All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -197,7 +204,6 @@
 
         document.addEventListener("keydown", (e) => {
             if (e.ctrlKey && e.shiftKey && e.key === "H") {
-                alert("Secret Easter egg activated!");
                 document.body.style.backgroundColor = "red";
                 setTimeout(() => {
                     document.body.style.backgroundColor = "black";
